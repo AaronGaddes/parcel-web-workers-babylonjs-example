@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body, #app {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* #app {
+  display: flex;
+  flex-direction: column;
+} */
+
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.gameWrapper {
+  display: grid;
+  position: relative;
+  height: 100%;
+  grid:
+    [row1-start] "header header header" 25px [row1-end]
+    [row2-start] "left main right" auto [row2-end]
+    [row3-start] "footer footer footer" 25px [row3-end] / 1fr 50% 1fr;
+}
+
+#sample-canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  grid-area: header/header/footer/footer;
+
+}
+
+.topButtons {
+  position: relative;
+  /* width: 100%;
+  height: 100%; */
+  grid-area: header/header/header/header;
+}
+
+.rightOverlay {
+  grid-area: right;
+  background: rgba(128,128,128,0.75);
+  backdrop-filter: blur(5px);
+}
